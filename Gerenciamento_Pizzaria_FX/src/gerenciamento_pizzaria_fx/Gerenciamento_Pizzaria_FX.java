@@ -9,19 +9,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.ListaLigadaCircular;
+import model.Pizza;
+import model.Salgadinho;
 
 /**
  *
  * @author steli
  */
 public class Gerenciamento_Pizzaria_FX extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -30,7 +33,35 @@ public class Gerenciamento_Pizzaria_FX extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        //  launch(args);
+        // System.out.println("Sin");
+        ListaLigadaCircular pizza = new ListaLigadaCircular();
+//           (String sabor, String borda, String molho, double precoUnitario)
+//        pizza.adicionar(new Pizza(4,"Margarita", "Fina", "Tomate", 900));
+//        pizza.adicionar(new Pizza(5,"Margarita", "Fina", "Tomate", 250));
+//        pizza.adicionar(new Pizza(0,"Margarita", "Fina", "Tomate", 350));
+//        pizza.adicionar(new Pizza(1,"Calabresa", "Normal", "Tomate", 100));
+//        pizza.adicionar(new Pizza(2,"Calabresa", "Normal", "Tomate", 800));
+//        System.out.println("Sem ordem");
+//        pizza.gravarEmArquivo("Pizza.txt");
+        
+//        System.out.println("Ordem de Preço");
+//        System.out.println("");
+//        System.out.println("");
+//      //  pizza.exibirEmOrdemCrescentePizza();
+//        System.out.println( pizza.sizePizza());
+        
+      //(int id,String tipo, String massa, String recheio, double precoUnitario)
+        ListaLigadaCircular salgado  = new ListaLigadaCircular();
+//        salgado.adicionar(new Salgadinho(0,"Chamussa","Leve","Lulas",50));
+//        salgado.adicionar(new Salgadinho(2,"Badjia","Leve","Porco",25));
+//        salgado.adicionar(new Salgadinho(1,"Ressol","Grossa","Frango",70));
+//        salgado.gravarEmArquivo("Salgado.txt");
+       
+      //  pizza.exibirPizza();
+        pizza.exibirEmOrdemCrescentePizza();
+        salgado.exibirEmOrdemCrescenteSalgado();
+        
     }
-    
+
 }

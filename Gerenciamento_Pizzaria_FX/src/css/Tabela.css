@@ -1,24 +1,24 @@
 /* style.css */
 
 /* Estilizar o cabeçalho da tabela */
-.table-view .column-header {
-    -fx-background-color: #336699;
+/**.table-view .column-header {
+ /   -fx-background-color: #336699;
     -fx-text-fill: #ffffff;
 }
 
 /* Estilizar as células da tabela */
-.table-row-cell {
+/*.table-row-cell {
     -fx-background-color: #f0f0f0;
     -fx-text-fill: #333333;
 }
 
 /* Estilizar as células quando o mouse passa por cima */
-.table-row-cell:hover {
+/*.table-row-cell:hover {
     -fx-background-color: #c0c0c0;
 }
 
 /* Estilizar a borda da tabela */
-.table-view {
+/*.table-view {
     -fx-border-color: #336699;
     -fx-border-width: 2;
 }
@@ -44,6 +44,13 @@
     -fx-background-radius: 10px
 }
 
+.botao2{
+    -fx-background-color: linear-gradient(to right,   #b65d00,   #b65d00);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-background-radius: 10px
+}
+
+
 .tabela{
     -fx-background-color: linear-gradient(to left,  #580bff03, #059bff05);
     -fx-text-fill: rgb(0, 0, 0);
@@ -51,7 +58,7 @@
 }
 
 .tabelinha{
-    -fx-background-color: linear-gradient(to right,  #0ce58b0c, #0ce58b07);
+    -fx-background-color: linear-gradient(to right,  #b65e0011, #b65e0010);
     -fx-text-fill: rgb(0, 0, 0);
     -fx-background-radius: 0px;}/*
  * Empty Stylesheet file.

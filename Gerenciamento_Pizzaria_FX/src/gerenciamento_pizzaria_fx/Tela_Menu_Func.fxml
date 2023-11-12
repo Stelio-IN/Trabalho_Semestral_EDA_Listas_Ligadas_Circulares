@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="700.0" prefWidth="237.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.8526315689086914" green="0.8368421196937561" blue="0.8368421196937561" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <AnchorPane layoutX="-112.0" layoutY="5.0" prefHeight="626.0" prefWidth="142.0" rotate="-5.0" style="-fx-background-color: #B65D00;" />
+            <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="76.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/EDA%20img/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="53.0" layoutY="137.0" text="Delícias Tob Tob" textFill="#b65d00">
+               <font>
+                  <Font name="Sitka Text Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="286.0" text="Realizar venda" textFill="#b65d00">
+               <font>
+                  <Font name="Sitka Text Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="331.0" text="Gestão de pizzas" textFill="#b65d00">
+               <font>
+                  <Font name="Sitka Text Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="376.0" text="Gestão de salgados" textFill="#b65d00">
+               <font>
+                  <Font name="Sitka Text Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="131.0" layoutY="595.0" text="Sair" textFill="#b65d00">
+               <font>
+                  <Font name="Sitka Text Italic" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="41.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/EDA%20img/carrinho.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="40.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/EDA%20img/pizza.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="41.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/EDA%20img/pastoso.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="97.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Downloads/EDA%20img/sair.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="700.0" prefWidth="885.0" stylesheets="@../css/Tabela.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="387.0" layoutY="104.0" prefHeight="308.0" prefWidth="456.0" style="-fx-background-radius: 30px; -fx-background-color: white;" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.6117647290229797" green="0.5843137502670288" blue="0.5843137502670288" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <TableView fx:id="TabelaVenda" layoutX="43.0" layoutY="94.0" prefHeight="200.0" prefWidth="369.0" styleClass="tabela">
+                     <columns>
+                        <TableColumn fx:id="colunaId" prefWidth="44.0" styleClass="tabelinha" text="ID" />
+                        <TableColumn fx:id="colunaCliente" prefWidth="100.0" styleClass="tabelinha" text="Cliente" />
+                        <TableColumn fx:id="colunaCelular" prefWidth="81.0" styleClass="tabelinha" text="Celular" />
+                        <TableColumn fx:id="colunaValor" prefWidth="75.0" styleClass="tabelinha" text="Valor_Pagar" />
+                        <TableColumn fx:id="colunaSituacao" prefWidth="75.0" styleClass="tabelinha" text="Situação" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane layoutY="26.0" prefHeight="32.0" prefWidth="132.0" style="-fx-background-color: #b65d00; -fx-background-radius: 0px 10px 10px 0px;">
+                     <children>
+                        <Label layoutX="33.0" layoutY="4.0" text="Pedidos" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="23.0" layoutY="92.0" prefHeight="558.0" prefWidth="327.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.6117647290229797" green="0.5843137502670288" blue="0.5843137502670288" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <TextField fx:id="txtId" layoutX="268.0" layoutY="81.0" prefHeight="25.0" prefWidth="33.0" promptText="1" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="243.0" layoutY="87.0" text="Id:" textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtClienteNome" layoutX="29.0" layoutY="392.0" prefHeight="26.0" prefWidth="196.0" promptText="Tobias zucula mphemo" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="29.0" layoutY="371.0" text="Nome cliente" textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtClienteCelular" layoutX="29.0" layoutY="452.0" prefHeight="26.0" prefWidth="196.0" promptText="841234567" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="29.0" layoutY="429.0" text="Celular" textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtClienteMorada" layoutX="29.0" layoutY="510.0" prefHeight="26.0" prefWidth="196.0" promptText="Xipamanine" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="36.0" layoutY="489.0" text="Morada" textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPizza" layoutX="34.0" layoutY="120.0" prefHeight="26.0" prefWidth="184.0" promptText="Pizza Mexicana" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="35.0" layoutY="99.0" text="Pizza" textFill="#864202">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPizzaQuant" layoutX="267.0" layoutY="120.0" prefHeight="25.0" prefWidth="33.0" promptText="10" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="226.0" layoutY="133.0" text="Qnt." textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="34.0" layoutY="157.0" text="Salgado" textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSalgado" layoutX="34.0" layoutY="181.0" prefHeight="26.0" prefWidth="184.0" promptText="Badjia" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="226.0" layoutY="194.0" text="Qnt." textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSalgadoQuant" layoutX="267.0" layoutY="181.0" prefHeight="25.0" prefWidth="33.0" promptText="30" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="34.0" layoutY="228.0" text="Total A Pagar" textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtTotalPagar" layoutX="30.0" layoutY="252.0" prefHeight="26.0" prefWidth="122.0" promptText="5000.00" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="181.0" layoutY="229.0" text="Situação PG." textFill="#793d02">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSituacao" layoutX="180.0" layoutY="252.0" prefHeight="26.0" prefWidth="122.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <AnchorPane layoutY="28.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #b65d00; -fx-background-radius: 0px 10px 10px 0px;">
+                     <children>
+                        <Label layoutX="33.0" layoutY="4.0" text="Detalhes do pedido" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="313.0" prefHeight="34.0" prefWidth="158.0" style="-fx-background-color: #b65d00; -fx-background-radius: 0px 10px 10px 0px;">
+                     <children>
+                        <Label layoutX="12.0" layoutY="4.0" text="Dados do cliente" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="381.0" layoutY="494.0" prefHeight="170.0" prefWidth="466.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.6117647290229797" green="0.5843137502670288" blue="0.5843137502670288" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Button layoutX="6.0" layoutY="90.0" mnemonicParsing="false" onAction="#confirmarPagamento" prefHeight="26.0" prefWidth="138.0" styleClass="botao" text="Confimar Pagamento">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="6.0" layoutY="129.0" mnemonicParsing="false" onAction="#cancelarPagamento" prefHeight="26.0" prefWidth="143.0" styleClass="botao" text="Cancelar Pagamento">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="158.0" layoutY="130.0" mnemonicParsing="false" onAction="#atualizarPagina" prefHeight="26.0" prefWidth="112.0" styleClass="botao" text="Atualizar Janela">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="282.0" layoutY="59.0" prefHeight="26.0" prefWidth="111.0" text="Pendentes:" textFill="#dac50b">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="282.0" layoutY="112.0" text="Cancelados:" textFill="#a42a05">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="282.0" layoutY="85.0" text="Efecutados:" textFill="#267c06">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPagamentosPendentes" layoutX="395.0" layoutY="50.0" prefHeight="26.0" prefWidth="50.0" promptText="2" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+                  <TextField fx:id="txtPagamentosEfectuados" layoutX="395.0" layoutY="76.0" prefHeight="26.0" prefWidth="50.0" promptText="5" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+                  <TextField fx:id="txtPagamentosCancelados" layoutX="395.0" layoutY="105.0" prefHeight="26.0" prefWidth="50.0" promptText="1" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+                  <Label layoutX="282.0" layoutY="24.0" text="Status Pagamento" textFill="#b65d00">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutY="23.0" prefHeight="32.0" prefWidth="132.0" style="-fx-background-color: #b65d00; -fx-background-radius: 0px 10px 10px 0px;">
+                     <children>
+                        <Label layoutX="16.0" layoutY="4.0" text="Pagamentos" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

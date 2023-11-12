@@ -415,6 +415,16 @@ public class ListaLigadaCircular {
     /*
     Venda
      */
+        public List<Venda> getVendas() {
+        List<Venda> lista = new ArrayList<>();
+        No temp = cabeca;
+        do {
+            lista.add((Venda) temp.dado);
+            temp = temp.proximo;
+        } while (temp != cabeca);
+        return lista;
+    }
+    
     public int sizeVenda() {
         carregarDoArquivo("Venda.txt");
         if (cabeca == null) {

@@ -24,7 +24,8 @@ public class Gerenciamento_Pizzaria_FX extends Application {
     public void start(Stage stage) throws Exception {
   //      Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
   //      Parent root = FXMLLoader.load(getClass().getResource("Tela_Salgadinho.fxml"));
-      Parent root = FXMLLoader.load(getClass().getResource("Tela_Fazer_Pedido.fxml"));
+     // Parent root = FXMLLoader.load(getClass().getResource("Tela_Fazer_Pedido.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("Tela_Venda.fxml"));
 
         Scene scene = new Scene(root);
 
@@ -70,7 +71,7 @@ public class Gerenciamento_Pizzaria_FX extends Application {
 ////        venda.adicionar(new Venda(0, Pteste, null, 4, 0, 500, "Pendente"));
 ////        venda.gravarEmArquivo("Venda.txt");
 //        venda.exibirVenda();
-//        venda.atualizarPeloIdVenda(0, new Venda(0, Pteste, null, 4, 0, 500, "Pago"));
+//        venda.atualizarPeloIdVenda(0, new Venda(0, Pteste, null, 4, 0, 500, "Pendente"));
 //        venda.exibirVenda();
     }
 

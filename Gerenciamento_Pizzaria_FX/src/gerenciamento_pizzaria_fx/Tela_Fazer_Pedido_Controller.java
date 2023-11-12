@@ -18,13 +18,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 import model.ListaLigadaCircular;
 import model.Pizza;
 import model.Salgadinho;
@@ -38,6 +41,9 @@ import model.Venda;
 public class Tela_Fazer_Pedido_Controller implements Initializable {
 
     @FXML
+    private ToggleGroup BordaPizza;
+
+    @FXML
     private TableColumn<Pizza, String> ColunaBorda;
 
     @FXML
@@ -47,22 +53,25 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     private TableColumn<Pizza, String> ColunaMolho;
 
     @FXML
+    private TableColumn<Salgadinho, String> ColunaNome;
+
+    @FXML
     private TableColumn<Pizza, Double> ColunaPrecoPizza;
 
     @FXML
     private TableColumn<Salgadinho, Double> ColunaPrecoSalgado;
 
     @FXML
-    private TableColumn<Salgadinho, String> ColunaRecheio;
+    private TableColumn<Pizza, String> ColunaRecheioPizza;
+
+    @FXML
+    private TableColumn<String, String> ColunaRecheioSalgado;
 
     @FXML
     private TableColumn<Pizza, String> ColunaSabor;
 
     @FXML
     private TableColumn<Salgadinho, String> ColunaTipo;
-
-    @FXML
-    private ComboBox<String> camboPizzaBorda;
 
     @FXML
     private ComboBox<String> camboPizzaMolho;
@@ -77,16 +86,13 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     private ComboBox<String> comboSalgadoRecheio;
 
     @FXML
-    private ComboBox<String> comboSalgadoTipo;
-
-    @FXML
     private TableView<Pizza> tabelaPizza;
 
     @FXML
     private TableView<Salgadinho> tabelaSalgado;
 
     @FXML
-    private TextField txtBorda;
+    private ToggleGroup tipoSalgado;
 
     @FXML
     private TextField txtIdPizza;
@@ -128,10 +134,11 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     private TextField txtRecheio;
 
     @FXML
-    private TextField txtSabor;
+    private TextField txtRecheioPizza;
 
     @FXML
-    private TextField txtTipo;
+    private TextField txtSabor;
+
     private ListaLigadaCircular listaSalgado = new ListaLigadaCircular();
 
     private ObservableList<Salgadinho> observableListeSalgado;
@@ -146,8 +153,9 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         List<Salgadinho> lista = listaligada.getSalgados();
         ColunaMassa.setCellValueFactory(new PropertyValueFactory<>("massa"));
         ColunaPrecoSalgado.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
-        ColunaRecheio.setCellValueFactory(new PropertyValueFactory<>("recheio"));
+        ColunaRecheioSalgado.setCellValueFactory(new PropertyValueFactory<>("recheio"));
         ColunaTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        ColunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         observableListeSalgado = FXCollections.observableArrayList(lista);
         tabelaSalgado.setItems(observableListeSalgado);
     }
@@ -162,6 +170,7 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         ColunaPrecoPizza.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
         ColunaMolho.setCellValueFactory(new PropertyValueFactory<>("molho"));
         ColunaBorda.setCellValueFactory(new PropertyValueFactory<>("borda"));
+        ColunaRecheioPizza.setCellValueFactory(new PropertyValueFactory<>("recheio"));
 
         observableListePizza = FXCollections.observableArrayList(lista);
         tabelaPizza.setItems(observableListePizza);
@@ -183,27 +192,58 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         txtSabor.setText(pizz.getSabor());
         txtPrecoPizza.setText(String.valueOf(pizz.getPrecoUnitario()));
         txtMolho.setText(pizz.getMolho());
-        txtBorda.setText(pizz.getBorda());
-        //  pizza = listaPizza.obterPizzaPorId(pizza.getId());
+        txtRecheioPizza.setText(pizz.getRecheio());
+        // Desmarque todos os toggles no ToggleGroup
+        BordaPizza.getToggles().forEach(toggle -> {
+            if (toggle instanceof RadioButton radioButton) {
+                radioButton.setSelected(false);
+            }
+        });
+
+        // Selecione o Toggle com base no valor da borda da pizza
+        BordaPizza.getToggles().forEach(toggle -> {
+            if (toggle instanceof RadioButton radioButton) {
+                if (radioButton.getText().equals(pizz.getBorda())) {
+                    radioButton.setSelected(true);
+                }
+            }
+        });
+
     }
 
     void obterLinhaSelecionada(Salgadinho salgado) {
         Salgadinho salgadoSelecionado = tabelaSalgado.getSelectionModel().getSelectedItem();
 
         if (salgado != null) {
-            preencherCamposPizzaSelecionada(salgadoSelecionado);
+            preencherCamposSalgadoSelecionado(salgadoSelecionado);
         } else {
             System.out.println("Nenhuma linha selecionada.");
         }
     }
 
-    private void preencherCamposPizzaSelecionada(Salgadinho sal) {
+    private void preencherCamposSalgadoSelecionado(Salgadinho sal) {
         salgado = sal;
         txtIdSalgado.setText(String.valueOf(sal.getId()));
-        txtTipo.setText(sal.getTipo());
+        //txtTipo.setText(sal.getTipo());
         txtPrecoSalgado.setText(String.valueOf(sal.getPrecoUnitario()));
         txtRecheio.setText(sal.getRecheio());
         txtMassa.setText(sal.getMassa());
+
+        // Desmarque todos os toggles no ToggleGroup
+        tipoSalgado.getToggles().forEach(toggle -> {
+            if (toggle instanceof RadioButton radioButton) {
+                radioButton.setSelected(false);
+            }
+        });
+
+        // Selecione o Toggle com base no valor da borda da pizza
+        tipoSalgado.getToggles().forEach(toggle -> {
+            if (toggle instanceof RadioButton radioButton) {
+                if (radioButton.getText().equals(sal.getTipo())) {
+                    radioButton.setSelected(true);
+                }
+            }
+        });
 
     }
 
@@ -252,7 +292,22 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         txtPrecoSalgado.textProperty().addListener((observable, oldValue, newValue) -> atualizarSoma(txtPrecoPizza, txtPrecoSalgado, txtPrecoTotal));
         txtPrecoPizza.textProperty().addListener((observable, oldValue, newValue) -> atualizarSoma(txtPrecoPizza, txtPrecoSalgado, txtPrecoTotal));
 
+        tabelaSalgado.getSelectionModel().selectedItemProperty().addListener((obs, antigo, novo) -> {
+            if (novo != null) {
+                // Chame um método para selecionar automaticamente o Toggle com base no tipo do salgado
+             //   selecionarTogglePorTipo(novo.getTipo());
+            }
+        });
     }
+
+//    private void selecionarTogglePorTipo(String tipo) {
+//        tipoSalgado.getToggles().forEach(toggle -> {
+//            RadioButton radioButton = (RadioButton) toggle;
+//            if (radioButton.getText().equals(tipo)) {
+//                toggle.setSelected(true);
+//            }
+//        });
+//    }
 
     private void resetarFXML(ActionEvent event) {
         try {
@@ -272,8 +327,8 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     void Fazer_Pedido(ActionEvent event) {
         ListaLigadaCircular venda = new ListaLigadaCircular();
         Venda pedido = new Venda();
-        //  
-        int idVenda = venda.sizeVenda()+1;
+
+        int idVenda = venda.sizeVenda() + 1;
         pedido.setId(idVenda);
         pedido.setCelular(txtNomeCelular.getText());
         pedido.setCliente(txtNomeCliente.getText());
@@ -285,9 +340,16 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         pedido.setMorada(txtNomeMorada.getText());
         pedido.setValorTotal(Double.parseDouble(txtPrecoTotal.getText()));
         pedido.setSituacao("Pendente");
+
         venda.adicionar(pedido);
         venda.gravarEmArquivo("Venda.txt");
-       JOptionPane.showMessageDialog(null,"Pedido Efectuado");
+
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Pedido Efetuado");
+        alert.setHeaderText(null);
+        alert.setContentText("Pedido efetuado com sucesso!");
+        alert.showAndWait();
+
         venda.exibirVenda();
         resetarFXML(event);
     }

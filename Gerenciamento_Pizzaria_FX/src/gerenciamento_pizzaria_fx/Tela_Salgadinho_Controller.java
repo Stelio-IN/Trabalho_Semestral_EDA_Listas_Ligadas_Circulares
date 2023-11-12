@@ -49,6 +49,10 @@ public class Tela_Salgadinho_Controller implements Initializable {
 
     @FXML
     private TableView<Salgadinho> tabela;
+    @FXML
+    private TextField txtNome;
+    @FXML
+    private TableColumn<Salgadinho, String> ColunaNome;
 
     @FXML
     private TextField txtId;
@@ -72,6 +76,7 @@ public class Tela_Salgadinho_Controller implements Initializable {
     void editar(ActionEvent event) {
         Salgadinho salgadoAtualizado = new Salgadinho();
         salgadoAtualizado.setId(Integer.parseInt(txtId.getText()));
+        salgadoAtualizado.setNome(txtNome.getText());
 
         salgadoAtualizado.setTipo(txtTipo.getText());
         salgadoAtualizado.setPrecoUnitario(Double.parseDouble(txtPreco.getText()));
@@ -79,6 +84,7 @@ public class Tela_Salgadinho_Controller implements Initializable {
         salgadoAtualizado.setRecheio(txtRecheio.getText());
         listaSalgado.atualizarPeloIdSalgado(Integer.parseInt(txtId.getText()), salgadoAtualizado);
         listarOrdem(event);
+        atualizarPagina(event);
 
     }
 
@@ -90,6 +96,7 @@ public class Tela_Salgadinho_Controller implements Initializable {
         List<Salgadinho> lista = listaligada.getSalgados();
 
         ColunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        ColunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         ColunaMassa.setCellValueFactory(new PropertyValueFactory<>("massa"));
         ColunaPreco.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
         ColunaRecheio.setCellValueFactory(new PropertyValueFactory<>("recheio"));
@@ -104,9 +111,10 @@ public class Tela_Salgadinho_Controller implements Initializable {
         ListaLigadaCircular listaligada = new ListaLigadaCircular();
         listaligada.exibirPizza();
 
-     List<Salgadinho> lista = listaSalgado.obterListaEmOrdemCrescenteSalgado();
+        List<Salgadinho> lista = listaSalgado.obterListaEmOrdemCrescenteSalgado();
 
         ColunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        ColunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         ColunaMassa.setCellValueFactory(new PropertyValueFactory<>("massa"));
         ColunaPreco.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
         ColunaRecheio.setCellValueFactory(new PropertyValueFactory<>("recheio"));
@@ -132,9 +140,45 @@ public class Tela_Salgadinho_Controller implements Initializable {
         txtPreco.setText(String.valueOf(salgado.getPrecoUnitario()));
         txtRecheio.setText(salgado.getRecheio());
         txtMassa.setText(salgado.getMassa());
+        txtNome.setText(salgado.getNome());
 
     }
- 
+
+    @FXML
+    void gravar(ActionEvent event) {
+        Salgadinho salgadoAtualizado = new Salgadinho();
+        salgadoAtualizado.setId(Integer.parseInt(txtId.getText()));
+        salgadoAtualizado.setNome(txtNome.getText());
+
+        salgadoAtualizado.setTipo(txtTipo.getText());
+        salgadoAtualizado.setPrecoUnitario(Double.parseDouble(txtPreco.getText()));
+        salgadoAtualizado.setMassa(txtMassa.getText());
+        salgadoAtualizado.setRecheio(txtRecheio.getText());
+        listaSalgado.adicionar(salgadoAtualizado);
+        listaSalgado.gravarEmArquivo("Salgado.txt");
+        listarOrdem(event);
+        atualizarPagina(event);
+    }
+
+    @FXML
+    void remover(ActionEvent event) {
+        listaSalgado.removerPeloIdSalgado(Integer.parseInt(txtId.getText()));
+        atualizarPagina(event);
+    }
+    @FXML
+    void atualizarPagina(ActionEvent event) {
+           try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Tela_Salgadinho.fxml"));
+            Parent root = loader.load();
+
+            // Seu código para configurar o controlador, se necessário
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Lide com a exceção conforme necessário
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -144,6 +188,9 @@ public class Tela_Salgadinho_Controller implements Initializable {
         );
         txtId.setDisable(true);
         listaSalgado.exibirSalgado();
+        int a = 0;
+        a = listaSalgado.sizeSalgado();
+        txtId.setText(String.valueOf(a));
     }
 
 }

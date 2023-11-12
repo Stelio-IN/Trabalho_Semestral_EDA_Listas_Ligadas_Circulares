@@ -75,6 +75,35 @@ public class ListaLigadaCircular {
     /*
         Pizza
      */
+    public List<Pizza> getPizzas() {
+        List<Pizza> lista = new ArrayList<>();
+        No temp = cabeca;
+        do {
+            lista.add((Pizza) temp.dado);
+            temp = temp.proximo;
+        } while (temp != cabeca);
+        return lista;
+    }
+
+    public Pizza obterPizzaPorId(int id) {
+        if (cabeca == null) {
+            System.out.println("A lista está vazia. Não é possível obter a pizza.");
+            return null;
+        }
+
+        No temp = cabeca;
+        do {
+            Pizza pizza = (Pizza) temp.dado;
+            if (pizza.getId() == id) {
+                return pizza;
+            }
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        System.out.println("Pizza com ID '" + id + "' não encontrada na lista.");
+        return null;
+    }
+
     public void exibirPizza() {
         carregarDoArquivo("Pizza.txt"); // Carregar os dados do arquivo antes de exibir
 
@@ -88,6 +117,29 @@ public class ListaLigadaCircular {
             System.out.println(temp.dado.toString());
             temp = temp.proximo;
         } while (temp != cabeca);
+    }
+
+    public List<Pizza> obterListaEmOrdemCrescentePizza() {
+        carregarDoArquivo("Pizza.txt"); // Carregar os dados do arquivo antes de exibir
+
+        if (cabeca == null) {
+            System.out.println("A lista está vazia.");
+            return Collections.emptyList(); // Retorna uma lista vazia
+        }
+
+        List<Pizza> listaOrdenada = new ArrayList<>();
+
+        No temp = cabeca;
+        do {
+            listaOrdenada.add((Pizza) temp.dado);
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        // Ordenar a lista pelo preço
+        Collections.sort(listaOrdenada, Comparator.comparing(Pizza::getPrecoUnitario));
+
+        // Retorna a lista ordenada
+        return listaOrdenada;
     }
 
     public void exibirEmOrdemCrescentePizza() {
@@ -189,11 +241,63 @@ public class ListaLigadaCircular {
 
         System.out.println("Elemento não encontrado pelo ID: " + id);
     }
-    
+
 
     /*
     Salgado
      */
+    public List<Salgadinho> getSalgados() {
+        List<Salgadinho> lista = new ArrayList<>();
+        No temp = cabeca;
+        do {
+            lista.add((Salgadinho) temp.dado);
+            temp = temp.proximo;
+        } while (temp != cabeca);
+        return lista;
+    }
+
+    public Salgadinho obterSalgadinhoPorId(int id) {
+        if (cabeca == null) {
+            System.out.println("A lista está vazia. Não é possível obter o Salgadinho.");
+            return null;
+        }
+
+        No temp = cabeca;
+        do {
+            Salgadinho salgado = (Salgadinho) temp.dado;
+            if (salgado.getId() == id) {
+                return salgado;
+            }
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        System.out.println("Salgadinho com ID '" + id + "' não encontrada na lista.");
+        return null;
+    }
+
+    public List<Salgadinho> obterListaEmOrdemCrescenteSalgado() {
+        carregarDoArquivo("Salgado.txt"); // Carregar os dados do arquivo antes de exibir
+
+        if (cabeca == null) {
+            System.out.println("A lista está vazia.");
+            return Collections.emptyList(); // Retorna uma lista vazia
+        }
+
+        List<Salgadinho> listaOrdenada = new ArrayList<>();
+
+        No temp = cabeca;
+        do {
+            listaOrdenada.add((Salgadinho) temp.dado);
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        // Ordenar a lista pelo preço
+        Collections.sort(listaOrdenada, Comparator.comparing(Salgadinho::getPrecoUnitario));
+
+        // Retorna a lista ordenada
+        return listaOrdenada;
+    }
+
     public void exibirEmOrdemCrescenteSalgado() {
         carregarDoArquivo("Salgado.txt"); // Carregar os dados do arquivo antes de exibir
 
@@ -227,7 +331,6 @@ public class ListaLigadaCircular {
 
         No temp = cabeca;
 
-    
         do {
             if (((Salgadinho) temp.dado).getId() == id) {
                 temp.dado = novoObjeto;
@@ -307,6 +410,61 @@ public class ListaLigadaCircular {
         } while (temp != cabeca);
 
         return count;
+    }
+
+    /*
+    Venda
+     */
+    public int sizeVenda() {
+        carregarDoArquivo("Venda.txt");
+        if (cabeca == null) {
+            return 0;
+        }
+
+        int count = 0;
+        No temp = cabeca;
+        do {
+            count++;
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        return count;
+    }
+
+    public void exibirVenda() {
+        carregarDoArquivo("Venda.txt"); // Carregar os dados do arquivo antes de exibir
+
+        if (cabeca == null) {
+            System.out.println("A lista está vazia.");
+            return;
+        }
+
+        No temp = cabeca;
+        do {
+            System.out.println(temp.dado.toString());
+            temp = temp.proximo;
+        } while (temp != cabeca);
+    }
+
+    public void atualizarPeloIdVenda(int id, Object novoObjeto) {
+        if (cabeca == null) {
+            System.out.println("A lista está vazia. Não é possível atualizar.");
+            return;
+        }
+
+        No temp = cabeca;
+
+        do {
+            if (((Venda) temp.dado).getId() == id) {
+                temp.dado = novoObjeto;
+                System.out.println("Elemento atualizado pelo ID: " + id);
+                gravarEmArquivo("Venda.txt"); // Atualizar o arquivo após atualizar
+                return;
+            }
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        System.out.println("Elemento não encontrado pelo ID: " + id);
     }
 
 }

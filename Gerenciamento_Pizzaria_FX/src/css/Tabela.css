@@ -1,0 +1,24 @@
+/* style.css */
+
+/* Estilizar o cabeçalho da tabela */
+.table-view .column-header {
+    -fx-background-color: #336699;
+    -fx-text-fill: #ffffff;
+}
+
+/* Estilizar as células da tabela */
+.table-row-cell {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #333333;
+}
+
+/* Estilizar as células quando o mouse passa por cima */
+.table-row-cell:hover {
+    -fx-background-color: #c0c0c0;
+}
+
+/* Estilizar a borda da tabela */
+.table-view {
+    -fx-border-color: #336699;
+    -fx-border-width: 2;
+}

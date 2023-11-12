@@ -20,6 +20,10 @@ import java.io.Serializable;
     private String molho;
     private double precoUnitario;
 
+    public Pizza() {
+    }
+    
+
     public Pizza(int id,String sabor, String borda, String molho, double precoUnitario) {
         this.id = id;
         this.sabor = sabor;

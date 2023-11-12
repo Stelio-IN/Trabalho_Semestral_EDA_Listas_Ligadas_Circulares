@@ -12,15 +12,18 @@ import java.io.Serializable;
  */
 public class Salgadinho implements Serializable {
 
-   private static final long serialVersionUID = 1L;
-   private int id;
+    private static final long serialVersionUID = 1L;
+    private int id;
     private String tipo;
     private String massa;
     private String recheio;
     private double precoUnitario;
 
-    public Salgadinho(int id,String tipo, String massa, String recheio, double precoUnitario) {
-        
+    public Salgadinho() {
+    }
+
+    public Salgadinho(int id, String tipo, String massa, String recheio, double precoUnitario) {
+
         this.id = id;
         this.tipo = tipo;
         this.massa = massa;
@@ -32,7 +35,6 @@ public class Salgadinho implements Serializable {
     public String toString() {
         return "Salgadinho{" + "id=" + id + ", tipo=" + tipo + ", massa=" + massa + ", recheio=" + recheio + ", precoUnitario=" + precoUnitario + '}';
     }
-    
 
     public double calcularPreco(int quantidade) {
         return precoUnitario * quantidade;
@@ -77,6 +79,5 @@ public class Salgadinho implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
+
 }

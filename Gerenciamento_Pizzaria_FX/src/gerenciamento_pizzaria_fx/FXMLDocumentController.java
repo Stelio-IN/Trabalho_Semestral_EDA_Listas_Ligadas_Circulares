@@ -4,6 +4,7 @@
  */
 package gerenciamento_pizzaria_fx;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -11,12 +12,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.ListaLigadaCircular;
 import model.Pizza;
 
@@ -56,11 +62,15 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextField txtPreco;
+    @FXML
+    private TextField txtRecheio;
+    @FXML
+    private TableColumn<Pizza, String> ColunaRecheio;
 
     @FXML
     private TextField txtSabor;
     private ListaLigadaCircular listaPizza = new ListaLigadaCircular();
-   // private Pizza pizza = new Pizza();
+    // private Pizza pizza = new Pizza();
 
     @FXML
     void btnListar(ActionEvent event) {
@@ -71,6 +81,7 @@ public class FXMLDocumentController implements Initializable {
 
         ColunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
         ColunaSabor.setCellValueFactory(new PropertyValueFactory<>("sabor"));
+        ColunaRecheio.setCellValueFactory(new PropertyValueFactory<>("recheio"));
         ColunaPreco.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
         ColunaMolho.setCellValueFactory(new PropertyValueFactory<>("molho"));
         ColunaBorda.setCellValueFactory(new PropertyValueFactory<>("borda"));
@@ -88,6 +99,7 @@ public class FXMLDocumentController implements Initializable {
 
         ColunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
         ColunaSabor.setCellValueFactory(new PropertyValueFactory<>("sabor"));
+        ColunaRecheio.setCellValueFactory(new PropertyValueFactory<>("recheio"));
         ColunaPreco.setCellValueFactory(new PropertyValueFactory<>("precoUnitario"));
         ColunaMolho.setCellValueFactory(new PropertyValueFactory<>("molho"));
         ColunaBorda.setCellValueFactory(new PropertyValueFactory<>("borda"));
@@ -104,8 +116,10 @@ public class FXMLDocumentController implements Initializable {
         pizzaAtualizada.setPrecoUnitario(Double.parseDouble(txtPreco.getText()));
         pizzaAtualizada.setMolho(txtMolho.getText());
         pizzaAtualizada.setBorda(txtBorda.getText());
+        pizzaAtualizada.setRecheio(txtRecheio.getText());
         listaPizza.atualizarPeloIdPizza(Integer.parseInt(txtId.getText()), pizzaAtualizada);
         listarOrdem(event);
+        atualizarPagina(event);
 
     }
 
@@ -125,7 +139,44 @@ public class FXMLDocumentController implements Initializable {
         txtPreco.setText(String.valueOf(pizza.getPrecoUnitario()));
         txtMolho.setText(pizza.getMolho());
         txtBorda.setText(pizza.getBorda());
-      //  pizza = listaPizza.obterPizzaPorId(pizza.getId());
+        txtRecheio.setText(pizza.getRecheio());
+
+    }
+
+    @FXML
+    void gravar(ActionEvent event) {
+        Pizza pizzaAtualizada = new Pizza();
+        pizzaAtualizada.setId(Integer.parseInt(txtId.getText()));
+        pizzaAtualizada.setSabor(txtSabor.getText());
+        pizzaAtualizada.setPrecoUnitario(Double.parseDouble(txtPreco.getText()));
+        pizzaAtualizada.setMolho(txtMolho.getText());
+        pizzaAtualizada.setBorda(txtBorda.getText());
+        pizzaAtualizada.setRecheio(txtRecheio.getText());
+        listaPizza.adicionar(pizzaAtualizada);
+        listaPizza.gravarEmArquivo("Pizza.txt");
+        atualizarPagina(event);
+        listarOrdem(event);
+    }
+
+    @FXML
+    void remover(ActionEvent event) {
+        listaPizza.removerPeloIdPizza(Integer.parseInt(txtId.getText()));
+        atualizarPagina(event);
+    }
+
+    @FXML
+    void atualizarPagina(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+            Parent root = loader.load();
+
+            // Seu código para configurar o controlador, se necessário
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Lide com a exceção conforme necessário
+        }
     }
 
     @Override
@@ -136,6 +187,9 @@ public class FXMLDocumentController implements Initializable {
         );
         txtId.setDisable(true);
         listaPizza.exibirPizza();
+        int a = 0;
+        a = listaPizza.sizePizza();
+        txtId.setText(String.valueOf(a));
 
     }
 

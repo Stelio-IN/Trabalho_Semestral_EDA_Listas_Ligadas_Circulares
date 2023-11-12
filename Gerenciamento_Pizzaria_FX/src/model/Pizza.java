@@ -19,13 +19,15 @@ import java.io.Serializable;
     private String borda;
     private String molho;
     private double precoUnitario;
+    private String recheio;
 
     public Pizza() {
     }
     
 
-    public Pizza(int id,String sabor, String borda, String molho, double precoUnitario) {
+    public Pizza(int id,String recheio,String sabor, String borda, String molho, double precoUnitario) {
         this.id = id;
+        this.recheio = recheio;
         this.sabor = sabor;
         this.borda = borda;
         this.molho = molho;
@@ -40,6 +42,7 @@ import java.io.Serializable;
     public String toString() {
         return "Pizza{" +
                 "Id='" + id + '\'' +
+                ",Recheio='" + recheio + '\'' +
                 ",sabor='" + sabor + '\'' +
                 ", borda='" + borda + '\'' +
                 ", molho='" + molho + '\'' +
@@ -87,6 +90,15 @@ import java.io.Serializable;
         this.precoUnitario = precoUnitario;
     }
 
+    public String getRecheio() {
+        return recheio;
+    }
+
+    public void setRecheio(String recheio) {
+        this.recheio = recheio;
+    }
+
+    
 }
 
 

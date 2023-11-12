@@ -14,6 +14,7 @@ public class Salgadinho implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private int id;
+    private String nome;
     private String tipo;
     private String massa;
     private String recheio;
@@ -22,8 +23,8 @@ public class Salgadinho implements Serializable {
     public Salgadinho() {
     }
 
-    public Salgadinho(int id, String tipo, String massa, String recheio, double precoUnitario) {
-
+    public Salgadinho(int id,String nome, String tipo, String massa, String recheio, double precoUnitario) {
+        this.nome=nome;
         this.id = id;
         this.tipo = tipo;
         this.massa = massa;
@@ -33,9 +34,10 @@ public class Salgadinho implements Serializable {
 
     @Override
     public String toString() {
-        return "Salgadinho{" + "id=" + id + ", tipo=" + tipo + ", massa=" + massa + ", recheio=" + recheio + ", precoUnitario=" + precoUnitario + '}';
+        return "Salgadinho{" + "id=" + id + ", nome=" + nome + ", tipo=" + tipo + ", massa=" + massa + ", recheio=" + recheio + ", precoUnitario=" + precoUnitario + '}';
     }
 
+  
     public double calcularPreco(int quantidade) {
         return precoUnitario * quantidade;
     }
@@ -79,5 +81,14 @@ public class Salgadinho implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
 
 }

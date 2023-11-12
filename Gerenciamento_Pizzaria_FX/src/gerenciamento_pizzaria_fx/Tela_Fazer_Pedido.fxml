@@ -3,9 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
@@ -14,8 +16,7 @@
 <?import javafx.scene.shape.QuadCurve?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="1117.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="gerenciamento_pizzaria_fx.Tela_Fazer_Pedido_Controller">
+<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Fazer_Pedido_Controller">
    <children>
       <AnchorPane layoutX="14.0" layoutY="322.0" prefHeight="271.0" prefWidth="776.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <effect>
@@ -51,44 +52,43 @@
                   </DropShadow>
                </effect>
             </QuadCurve>
-            <TextField fx:id="txtIdSalgado" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <TextField fx:id="txtTipo" layoutX="15.0" layoutY="82.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <TextField fx:id="txtMassa" layoutX="15.0" layoutY="127.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <TextField fx:id="txtRecheio" layoutX="15.0" layoutY="172.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <Label layoutX="15.0" layoutY="61.0" text="Tipo" textFill="#847e7e">
+            <TextField fx:id="txtIdSalgado" layoutX="11.0" layoutY="38.0" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <TextField fx:id="txtMassa" layoutX="14.0" layoutY="158.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <TextField fx:id="txtRecheio" layoutX="14.0" layoutY="203.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <Label layoutX="14.0" layoutY="92.0" text="Tipo" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="15.0" layoutY="27.0" text="Id" textFill="#847e7e">
+            <Label layoutX="12.0" layoutY="17.0" text="Id" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="15.0" layoutY="106.0" text="Massa" textFill="#847e7e">
+            <Label layoutX="14.0" layoutY="137.0" text="Massa" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="151.0" text="Recheio" textFill="#847e7e">
+            <Label layoutX="13.0" layoutY="184.0" text="Recheio" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <ComboBox fx:id="comboSalgadoTipo" layoutX="166.0" layoutY="83.0" prefWidth="150.0" promptText="Tipo que que que" stylesheets="@../css/Combo_Box.css" />
-            <ComboBox fx:id="comboSalgadoMassa" layoutX="166.0" layoutY="130.0" prefWidth="150.0" promptText="Massa que que que" stylesheets="@../css/Combo_Box.css" />
-            <ComboBox fx:id="comboSalgadoRecheio" layoutX="166.0" layoutY="173.0" prefWidth="150.0" promptText="Recheio que que que" stylesheets="@../css/Combo_Box.css" />
+            <ComboBox fx:id="comboSalgadoMassa" layoutX="176.0" layoutY="157.0" prefWidth="150.0" promptText="Massa que que que" stylesheets="@../css/Combo_Box.css" />
+            <ComboBox fx:id="comboSalgadoRecheio" layoutX="176.0" layoutY="202.0" prefWidth="150.0" promptText="Recheio que que que" stylesheets="@../css/Combo_Box.css" />
             <Label layoutX="483.0" layoutY="14.0" text="Salgadinho" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TableView fx:id="tabelaSalgado" layoutX="363.0" layoutY="82.0" prefHeight="151.0" prefWidth="366.0" stylesheets="@../css/Tabela.css">
+            <TableView fx:id="tabelaSalgado" layoutX="339.0" layoutY="82.0" prefHeight="151.0" prefWidth="445.0" stylesheets="@../css/Tabela.css">
                <columns>
-                  <TableColumn fx:id="ColunaTipo" prefWidth="84.0" text="Tipo" />
+                  <TableColumn fx:id="ColunaNome" prefWidth="84.0" text="Nome" />
                   <TableColumn fx:id="ColunaMassa" prefWidth="100.0" text="Massa" />
-                  <TableColumn fx:id="ColunaRecheio" prefWidth="101.0" text="Recheio" />
+                  <TableColumn fx:id="ColunaRecheioSalgado" prefWidth="101.0" text="Recheio" />
                   <TableColumn fx:id="ColunaPrecoSalgado" prefWidth="79.0" text="Preço Uni." />
+                  <TableColumn fx:id="ColunaTipo" prefWidth="84.0" text="Tipo" />
                </columns>
             </TableView>
             <Label layoutX="370.0" layoutY="61.0" text="Salgados Ja Existetes" textFill="#847e7e">
@@ -96,6 +96,12 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
+            <RadioButton layoutX="18.0" layoutY="117.0" mnemonicParsing="false" selected="true" text="Frito">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tipoSalgado" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="92.0" layoutY="117.0" mnemonicParsing="false" text="Assado" toggleGroup="$tipoSalgado" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="23.0" prefHeight="260.0" prefWidth="776.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
@@ -132,10 +138,9 @@
                   </DropShadow>
                </effect>
             </QuadCurve>
-            <ComboBox fx:id="camboPizzaSabor" layoutX="166.0" layoutY="88.0" prefWidth="150.0" promptText="Sabor que que que" stylesheets="@../css/Combo_Box.css" />
-            <ComboBox fx:id="camboPizzaBorda" layoutX="166.0" layoutY="133.0" prefWidth="150.0" promptText="Borda que que que" stylesheets="@../css/Combo_Box.css" />
-            <ComboBox fx:id="camboPizzaMolho" layoutX="166.0" layoutY="178.0" prefWidth="150.0" promptText="Molho que que que" stylesheets="@../css/Combo_Box.css" />
-            <Label layoutX="247.0" layoutY="8.0" text="Pizza" textFill="#847e7e">
+            <ComboBox fx:id="camboPizzaSabor" layoutX="181.0" layoutY="165.0" prefHeight="29.0" prefWidth="167.0" promptText="Recheio que que que" stylesheets="@../css/Combo_Box.css" />
+            <ComboBox fx:id="camboPizzaMolho" layoutX="181.0" layoutY="213.0" prefHeight="29.0" prefWidth="167.0" promptText="Molho que que que" stylesheets="@../css/Combo_Box.css" />
+            <Label layoutX="438.0" layoutY="8.0" text="Pizza" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -145,11 +150,10 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="txtIdPizza" layoutX="14.0" layoutY="42.0" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <TextField fx:id="txtSabor" layoutX="15.0" layoutY="87.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <TextField fx:id="txtBorda" layoutX="15.0" layoutY="132.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <TextField fx:id="txtMolho" layoutX="15.0" layoutY="177.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-            <Label layoutX="15.0" layoutY="66.0" text="Sabor" textFill="#847e7e">
+            <TextField fx:id="txtIdPizza" layoutX="14.0" layoutY="41.0" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <TextField fx:id="txtSabor" layoutX="86.0" layoutY="67.0" prefHeight="26.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <TextField fx:id="txtMolho" layoutX="28.0" layoutY="213.0" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <Label layoutX="119.0" layoutY="46.0" text="Pizza de:" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -159,24 +163,37 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="15.0" layoutY="111.0" text="Borda" textFill="#847e7e">
+            <Label layoutX="26.0" layoutY="93.0" text="Borda" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="156.0" text="Molho" textFill="#847e7e">
+            <Label layoutX="25.0" layoutY="192.0" text="Molho" textFill="#847e7e">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TableView fx:id="tabelaPizza" layoutX="354.0" layoutY="80.0" prefHeight="151.0" prefWidth="373.0" stylesheets="@../css/Tabela.css">
+            <TableView fx:id="tabelaPizza" layoutX="354.0" layoutY="80.0" prefHeight="151.0" prefWidth="424.0" stylesheets="@../css/Tabela.css">
                <columns>
                   <TableColumn fx:id="ColunaSabor" prefWidth="84.0" text="Sabor" />
-                  <TableColumn fx:id="ColunaBorda" prefWidth="100.0" text="Borda" />
-                  <TableColumn fx:id="ColunaMolho" prefWidth="101.0" text="Molho" />
-                  <TableColumn fx:id="ColunaPrecoPizza" prefWidth="86.0" text="Preço Uni." />
+                  <TableColumn fx:id="ColunaBorda" prefWidth="81.0" text="Borda" />
+                  <TableColumn fx:id="ColunaMolho" prefWidth="96.0" text="Molho" />
+                  <TableColumn fx:id="ColunaRecheioPizza" prefWidth="84.0" text="Recheio" />
+                  <TableColumn fx:id="ColunaPrecoPizza" prefWidth="76.0" text="Preço Uni." />
                </columns>
             </TableView>
+            <Label layoutX="28.0" layoutY="145.0" text="Recheio" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRecheioPizza" layoutX="28.0" layoutY="166.0" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+            <RadioButton layoutX="24.0" layoutY="122.0" mnemonicParsing="false" selected="true" text="Recheadas">
+               <toggleGroup>
+                  <ToggleGroup fx:id="BordaPizza" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="137.0" layoutY="122.0" mnemonicParsing="false" text="Sem Recheio" toggleGroup="$BordaPizza" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="821.0" layoutY="23.0" prefHeight="570.0" prefWidth="263.0" style="-fx-background-radius: 30px; -fx-background-color: white;" styleClass="painelinho">

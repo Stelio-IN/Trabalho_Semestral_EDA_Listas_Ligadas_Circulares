@@ -8,26 +8,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Salgadinho_Controller">
    <children>
       <TableView fx:id="tabela" layoutX="245.0" layoutY="89.0" prefHeight="200.0" prefWidth="407.0">
-        <columns>
-          <TableColumn fx:id="ColunaId" prefWidth="41.0" text="id" />
-          <TableColumn fx:id="ColunaSabor" prefWidth="84.0" text="Sabor" />
-            <TableColumn fx:id="ColunaBorda" prefWidth="100.0" text="Borda" />
-            <TableColumn fx:id="ColunaMolho" prefWidth="101.0" text="Molho" />
+         <columns>
+            <TableColumn fx:id="ColunaId" prefWidth="41.0" text="id" />
+            <TableColumn fx:id="ColunaTipo" prefWidth="84.0" text="Tipo" />
+            <TableColumn fx:id="ColunaMassa" prefWidth="100.0" text="Massa" />
+            <TableColumn fx:id="ColunaRecheio" prefWidth="101.0" text="Recheio" />
             <TableColumn fx:id="ColunaPreco" prefWidth="79.0" text="Preço Uni." />
-        </columns>
+         </columns>
       </TableView>
       <Button layoutX="427.0" layoutY="334.0" mnemonicParsing="false" onAction="#btnListar" text="Listar" />
       <Button layoutX="245.0" layoutY="334.0" mnemonicParsing="false" onAction="#listarOrdem" text="Listar Ordem Crescente" />
       <TextField fx:id="txtId" layoutX="38.0" layoutY="100.0" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtSabor" layoutX="39.0" layoutY="145.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtBorda" layoutX="39.0" layoutY="190.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtMolho" layoutX="39.0" layoutY="235.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+      <TextField fx:id="txtTipo" layoutX="39.0" layoutY="145.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+      <TextField fx:id="txtMassa" layoutX="39.0" layoutY="190.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
+      <TextField fx:id="txtRecheio" layoutX="39.0" layoutY="235.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
       <TextField fx:id="txtPreco" layoutX="39.0" layoutY="281.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
       <Button layoutX="503.0" layoutY="334.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
-      <Label layoutX="39.0" layoutY="124.0" text="Sabor" textFill="#847e7e">
+      <Label layoutX="39.0" layoutY="124.0" text="Tipo" textFill="#847e7e">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -37,12 +37,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="169.0" text="Borda" textFill="#847e7e">
+      <Label layoutX="39.0" layoutY="169.0" text="Massa" textFill="#847e7e">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="214.0" text="Molho" textFill="#847e7e">
+      <Label layoutX="38.0" layoutY="214.0" text="Recheio" textFill="#847e7e">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -52,7 +52,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="292.0" layoutY="30.0" text="Pizza Crud" textFill="#847e7e">
+      <Label layoutX="274.0" layoutY="31.0" text="Salgadinho Crud" textFill="#847e7e">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>

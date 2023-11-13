@@ -5,67 +5,135 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Salgadinho_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Salgadinho_Controller">
    <children>
-      <TableView fx:id="tabela" layoutX="193.0" layoutY="90.0" prefHeight="200.0" prefWidth="492.0">
-         <columns>
-            <TableColumn fx:id="ColunaId" prefWidth="41.0" text="id" />
-            <TableColumn fx:id="ColunaNome" prefWidth="84.0" text="Nome" />
-            <TableColumn fx:id="ColunaMassa" prefWidth="100.0" text="Massa" />
-            <TableColumn fx:id="ColunaRecheio" prefWidth="101.0" text="Recheio" />
-            <TableColumn fx:id="ColunaPreco" prefWidth="79.0" text="Preço Uni." />
-            <TableColumn fx:id="ColunaTipo" prefWidth="84.0" text="Tipo" />
-         </columns>
-      </TableView>
-      <Button layoutX="427.0" layoutY="334.0" mnemonicParsing="false" onAction="#btnListar" text="Listar" />
-      <Button layoutX="245.0" layoutY="334.0" mnemonicParsing="false" onAction="#listarOrdem" text="Listar Ordem Crescente" />
-      <TextField fx:id="txtId" layoutX="38.0" layoutY="100.0" prefHeight="25.0" prefWidth="33.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtTipo" layoutX="40.0" layoutY="220.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtMassa" layoutX="40.0" layoutY="265.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtRecheio" layoutX="40.0" layoutY="310.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <TextField fx:id="txtPreco" layoutX="40.0" layoutY="356.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <Button layoutX="503.0" layoutY="334.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
-      <Label layoutX="40.0" layoutY="199.0" text="Tipo" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="79.0" text="Id" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="40.0" layoutY="244.0" text="Massa" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="289.0" text="Recheio" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="335.0" text="Preço" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="274.0" layoutY="31.0" text="Salgadinho Crud" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtNome" layoutX="39.0" layoutY="147.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: black;" />
-      <Label layoutX="39.0" layoutY="126.0" text="Nome" textFill="#847e7e">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Label>
-      <Button layoutX="514.0" layoutY="376.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
-      <Button layoutX="417.0" layoutY="376.0" mnemonicParsing="false" onAction="#remover" text="Remover" />
-      <Button layoutX="289.0" layoutY="376.0" mnemonicParsing="false" onAction="#atualizarPagina" text="Atualizar Pagina" />
+      <AnchorPane layoutX="17.0" layoutY="52.0" prefHeight="418.0" prefWidth="310.0" style="-fx-background-color: #b65d00; -fx-background-radius: 20px;">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.557894766330719" green="0.5413645505905151" blue="0.5413645505905151" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <TextField fx:id="txtId" layoutX="19.0" layoutY="61.0" prefHeight="25.0" prefWidth="33.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtTipo" layoutX="21.0" layoutY="165.0" prefHeight="26.0" prefWidth="218.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtMassa" layoutX="21.0" layoutY="217.0" prefHeight="26.0" prefWidth="218.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtRecheio" layoutX="21.0" layoutY="265.0" prefHeight="26.0" prefWidth="218.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtPreco" layoutX="21.0" layoutY="316.0" prefHeight="26.0" prefWidth="218.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <Label layoutX="20.0" layoutY="143.0" text="Tipo" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="39.0" text="Id" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="196.0" text="Massa" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="250.0" text="Recheio" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="297.0" text="Preço" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNome" layoutX="20.0" layoutY="110.0" prefHeight="26.0" prefWidth="218.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <Label layoutX="19.0" layoutY="93.0" text="Nome" textFill="#847e7e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="345.0" layoutY="52.0" prefHeight="466.0" prefWidth="518.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.6736842393875122" green="0.6362572908401489" blue="0.6362572908401489" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <TableView fx:id="tabela" layoutX="29.0" layoutY="76.0" prefHeight="200.0" prefWidth="492.0">
+               <columns>
+                  <TableColumn fx:id="ColunaId" prefWidth="41.0" text="id" />
+                  <TableColumn fx:id="ColunaNome" prefWidth="84.0" text="Nome" />
+                  <TableColumn fx:id="ColunaMassa" prefWidth="100.0" text="Massa" />
+                  <TableColumn fx:id="ColunaRecheio" prefWidth="101.0" text="Recheio" />
+                  <TableColumn fx:id="ColunaPreco" prefWidth="79.0" text="Preço Uni." />
+                  <TableColumn fx:id="ColunaTipo" prefWidth="84.0" text="Tipo" />
+               </columns>
+            </TableView>
+            <Button layoutX="394.0" layoutY="270.0" mnemonicParsing="false" onAction="#btnListar" text="Listar" />
+            <Button layoutX="212.0" layoutY="270.0" mnemonicParsing="false" onAction="#listarOrdem" text="Listar Ordem Crescente" />
+            <Button layoutX="470.0" layoutY="270.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
+            <Button layoutX="481.0" layoutY="312.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
+            <Button layoutX="384.0" layoutY="312.0" mnemonicParsing="false" onAction="#remover" text="Remover" />
+            <Button layoutX="256.0" layoutY="312.0" mnemonicParsing="false" onAction="#atualizarPagina" text="Atualizar Pagina" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

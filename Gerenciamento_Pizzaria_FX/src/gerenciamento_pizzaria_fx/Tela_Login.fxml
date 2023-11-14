@@ -10,40 +10,40 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_LoginController">
+<AnchorPane id="AnchorPane" fx:id="PainelTelaLogin" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_LoginController">
    <children>
       <AnchorPane layoutX="99.0" layoutY="50.0" prefHeight="594.0" prefWidth="802.0" style="-fx-background-color: white;">
          <children>
             <ImageView fitHeight="611.0" fitWidth="424.0" layoutX="378.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/EDA%20img/Livreto%20Alimentação%20Saudável%20Criativo%20Moderno%20Verde%20(6).png" />
+                  <Image url="@../img/Livreto%20Alimentação%20Saudável%20Criativo%20Moderno%20Verde%20(5).png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="4.0" layoutY="4.0" prefHeight="591.0" prefWidth="374.0" style="-fx-background-color: white;">
                <children>
-                  <TextField layoutX="82.0" layoutY="366.0" prefHeight="26.0" prefWidth="222.0" promptText="*******************" style="-fx-border-color: #DAA530;" styleClass="textfields_esquerda">
+                  <TextField fx:id="txtPassword" layoutX="82.0" layoutY="366.0" prefHeight="26.0" prefWidth="222.0" promptText="*******************" style="-fx-border-color: #DAA530;" styleClass="textfields_esquerda">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="90.0" layoutY="303.0" prefHeight="26.0" prefWidth="213.0" promptText="Digite o seu e-mail" style="-fx-border-color: #DAA530;" styleClass="textfields_esquerda">
+                  <TextField fx:id="txtEmail" layoutX="90.0" layoutY="303.0" prefHeight="26.0" prefWidth="213.0" promptText="Digite o seu e-mail" style="-fx-border-color: #DAA530;" styleClass="textfields_esquerda">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
                   <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="56.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Downloads/EDA%20img/e-mail%20(1).png" />
+                        <Image url="@../img/e-mail%20(1).png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="53.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Downloads/EDA%20img/cadeado%20(1).png" />
+                        <Image url="@../img/cadeado%20(1).png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="102.0" fitWidth="103.0" layoutX="137.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Downloads/EDA%20img/logo.png" />
+                        <Image url="@../img/logo.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="114.0" layoutY="158.0" text="Delícias Tob Tob" textFill="#b65d00">
@@ -51,7 +51,7 @@
                         <Font name="Sitka Text Italic" size="20.0" />
                      </font>
                   </Label>
-                  <Button layoutX="207.0" layoutY="431.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" styleClass="botao" text="Entrar">
+                  <Button layoutX="207.0" layoutY="431.0" mnemonicParsing="false" onAction="#Entrar" prefHeight="26.0" prefWidth="95.0" styleClass="botao" text="Entrar">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

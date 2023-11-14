@@ -13,8 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Menu_FuncController">
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="237.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <effect>
@@ -28,7 +27,7 @@
             <AnchorPane layoutX="-112.0" layoutY="5.0" prefHeight="626.0" prefWidth="142.0" rotate="-5.0" style="-fx-background-color: #B65D00;" />
             <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="76.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/EDA%20img/logo.png" />
+                  <Image url="@../img/logo.png" />
                </image>
             </ImageView>
             <Label layoutX="53.0" layoutY="137.0" text="Delícias Tob Tob" textFill="#b65d00">
@@ -58,24 +57,28 @@
             </Label>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="41.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/EDA%20img/carrinho.png" />
+                  <Image url="@../img/carrinho.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="40.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/EDA%20img/pizza.png" />
+                  <Image url="@../img/pizza.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="41.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/EDA%20img/pastoso.png" />
+                  <Image url="@../img/pastoso.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="97.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Downloads/EDA%20img/sair.png" />
+                  <Image url="@../img/sair.png" />
                </image>
             </ImageView>
+            <Button layoutX="99.0" layoutY="594.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="43.0" layoutY="285.0" mnemonicParsing="false" onAction="#Tela_Realizar_Venda" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="43.0" layoutY="328.0" mnemonicParsing="false" onAction="#Tela_Gestao_Pizza" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="43.0" layoutY="375.0" mnemonicParsing="false" onAction="#Tela_Gestao_Salgadinho" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
    </left>

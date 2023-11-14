@@ -24,7 +24,7 @@
             </DropShadow>
          </effect>
          <children>
-            <TextField fx:id="txtIdSalgado" layoutX="255.0" layoutY="50.0" prefHeight="25.0" prefWidth="33.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+            <TextField fx:id="txtIdSalgado" layoutX="476.0" layoutY="38.0" prefHeight="25.0" prefWidth="33.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
             <TextField fx:id="txtMassa" layoutX="14.0" layoutY="136.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
             <TextField fx:id="txtRecheio" layoutX="14.0" layoutY="203.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
             <Label layoutX="14.0" layoutY="51.0" text="Tipo" textFill="#713901">
@@ -32,7 +32,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="234.0" layoutY="52.0" text="Id:" textFill="#713901">
+            <Label layoutX="455.0" layoutY="40.0" text="Id:" textFill="#713901">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -69,6 +69,12 @@
                </toggleGroup>
             </RadioButton>
             <RadioButton layoutX="92.0" layoutY="78.0" mnemonicParsing="false" text="Assado" toggleGroup="$tipoSalgado" />
+            <TextField fx:id="txtNomeSalgado" layoutX="220.0" layoutY="27.0" prefHeight="26.0" prefWidth="157.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+            <Label layoutX="152.0" layoutY="29.0" text="Salgado :" textFill="#713901">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="55.0" layoutY="23.0" prefHeight="260.0" prefWidth="776.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
@@ -80,7 +86,7 @@
             </DropShadow>
          </effect>
          <children>
-            <ComboBox fx:id="camboPizzaSabor" layoutX="181.0" layoutY="142.0" prefHeight="30.0" prefWidth="127.0" promptText="Recheio que que que" stylesheets="@../css/Combo_Box.css" />
+            <ComboBox fx:id="camboPizzaRecheio" layoutX="181.0" layoutY="142.0" prefHeight="30.0" prefWidth="127.0" promptText="Recheio que que que" stylesheets="@../css/Combo_Box.css" />
             <ComboBox fx:id="camboPizzaMolho" layoutX="181.0" layoutY="212.0" prefHeight="30.0" prefWidth="127.0" promptText="Molho que que que" stylesheets="@../css/Combo_Box.css" />
             <Label layoutX="330.0" layoutY="66.0" text="Cardápio" textFill="#b65d00" underline="true">
                <font>
@@ -152,25 +158,25 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPrecoPizza" layoutX="57.0" layoutY="290.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+            <TextField fx:id="txtPrecoPizza" layoutX="57.0" layoutY="290.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="0" />
             <Label layoutX="13.0" layoutY="303.0" text="Preço:" textFill="#713901">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPrecoSalgado" layoutX="54.0" layoutY="388.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+            <TextField fx:id="txtPrecoSalgado" layoutX="54.0" layoutY="388.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="0" />
             <Label layoutX="13.0" layoutY="401.0" text="Preço:" textFill="#713901">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txtQuantidadePizza" layoutX="91.0" layoutY="254.0" prefHeight="26.0" prefWidth="113.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+            <TextField fx:id="txtQuantidadePizza" layoutX="91.0" layoutY="254.0" prefHeight="26.0" prefWidth="113.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="1" />
             <Label layoutX="13.0" layoutY="267.0" text="Quantidade:" textFill="#713901">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txtQuantidadeSalgado" layoutX="84.0" layoutY="358.0" prefHeight="26.0" prefWidth="113.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" />
+            <TextField fx:id="txtQuantidadeSalgado" layoutX="84.0" layoutY="358.0" prefHeight="26.0" prefWidth="113.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="1" />
             <Label layoutX="13.0" layoutY="371.0" text="Quantidade:" textFill="#713901">
                <font>
                   <Font name="System Bold" size="12.0" />

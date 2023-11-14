@@ -188,5 +188,10 @@
             </DropShadow>
          </effect>
       </AnchorPane>
+      <Button layoutX="91.0" layoutY="612.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

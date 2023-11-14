@@ -27,7 +27,7 @@
             <AnchorPane layoutX="-112.0" layoutY="5.0" prefHeight="626.0" prefWidth="142.0" rotate="-5.0" style="-fx-background-color: #B65D00;" />
             <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="76.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/logo.png" />
+                  <Image url="@../EDA%20img/logo.png" />
                </image>
             </ImageView>
             <Label layoutX="53.0" layoutY="137.0" text="Delícias Tob Tob" textFill="#b65d00">
@@ -57,22 +57,22 @@
             </Label>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="41.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/carrinho.png" />
+                  <Image url="@../EDA%20img/carrinho.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="40.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/pizza.png" />
+                  <Image url="@../EDA%20img/pizza.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="41.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/pastoso.png" />
+                  <Image url="@../EDA%20img/pastoso.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="97.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/sair.png" />
+                  <Image url="@../EDA%20img/sair.png" />
                </image>
             </ImageView>
             <Button layoutX="99.0" layoutY="594.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: transparent;" />

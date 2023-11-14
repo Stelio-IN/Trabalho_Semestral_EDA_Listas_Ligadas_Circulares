@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="1117.0" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Fazer_Pedido_Controller">
+<AnchorPane id="AnchorPane" prefHeight="658.0" prefWidth="1141.0" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Fazer_Pedido_Controller">
    <children>
       <AnchorPane layoutX="14.0" layoutY="322.0" prefHeight="271.0" prefWidth="776.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <effect>
@@ -47,7 +47,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <ComboBox fx:id="comboSalgadoMassa" layoutX="176.0" layoutY="135.0" prefHeight="30.0" prefWidth="114.0" promptText="Massa que que que" style="-fx-background-color: #b65d00;" stylesheets="@../css/Combo_Box.css" />
+            <ComboBox fx:id="comboSalgadoMassa" layoutX="176.0" layoutY="135.0" prefHeight="30.0" prefWidth="114.0" promptText="Massa que que que" stylesheets="@../css/Combo_Box.css" />
             <ComboBox fx:id="comboSalgadoRecheio" layoutX="176.0" layoutY="202.0" prefHeight="30.0" prefWidth="114.0" promptText="Recheio que que que" stylesheets="@../css/Combo_Box.css" />
             <TableView fx:id="tabelaSalgado" layoutX="308.0" layoutY="89.0" prefHeight="151.0" prefWidth="445.0" styleClass="tabela" stylesheets="@../css/Tabela.css">
                <columns>
@@ -244,5 +244,6 @@
             </Label>
          </children>
       </AnchorPane>
+      <Button layoutX="95.0" layoutY="608.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar" />
    </children>
 </AnchorPane>

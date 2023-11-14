@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -27,8 +28,8 @@ public class Tela_LoginController implements Initializable {
     @FXML
     private TextField txtEmail;
 
-    @FXML
-    private TextField txtPassword;
+   @FXML
+    private PasswordField txtPassword;
 
     public void Tela_de_Entrada(ActionEvent event, String caminho) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(caminho));

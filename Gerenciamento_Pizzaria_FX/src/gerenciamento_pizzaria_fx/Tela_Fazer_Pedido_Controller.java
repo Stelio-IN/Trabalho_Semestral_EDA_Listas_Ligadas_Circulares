@@ -357,6 +357,7 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
             txtRecheioPizza.setText(textoSelecionado);
         }
     }
+
     private void preencherMolhoPizza(ActionEvent event) {
         String textoSelecionado = camboPizzaMolho.getSelectionModel().getSelectedItem();
         if (textoSelecionado != null) {
@@ -364,14 +365,6 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         }
     }
 
-//    private void selecionarTogglePorTipo(String tipo) {
-//        tipoSalgado.getToggles().forEach(toggle -> {
-//            RadioButton radioButton = (RadioButton) toggle;
-//            if (radioButton.getText().equals(tipo)) {
-//                toggle.setSelected(true);
-//            }
-//        });
-//    }
     private void resetarFXML(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Tela_Fazer_Pedido.fxml"));
@@ -390,10 +383,10 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     void Fazer_Pedido(ActionEvent event) {
         ListaLigadaCircular venda = new ListaLigadaCircular();
         Venda pedido = new Venda();
-        
-         RadioButton pegarBorda = (RadioButton) BordaPizza.getSelectedToggle();
+
+        RadioButton pegarBorda = (RadioButton) BordaPizza.getSelectedToggle();
         String borda = pegarBorda.getText();
-         RadioButton pegarSalgado = (RadioButton) tipoSalgado.getSelectedToggle();
+        RadioButton pegarSalgado = (RadioButton) tipoSalgado.getSelectedToggle();
         String tipo = pegarSalgado.getText();
         salgado.setTipo(tipo);
         pizza.setBorda(borda);

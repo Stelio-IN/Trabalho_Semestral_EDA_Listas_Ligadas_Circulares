@@ -84,7 +84,7 @@
                   </InnerShadow>
                </effect>
             </TextField>
-            <TextField fx:id="txtSabor" layoutX="34.0" layoutY="198.0" prefHeight="26.0" prefWidth="234.0" promptText="Regina" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+            <TextField fx:id="txtSabor" layoutX="34.0" layoutY="198.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
                <effect>
                   <InnerShadow>
                      <color>
@@ -96,7 +96,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtBorda" layoutX="34.0" layoutY="263.0" prefHeight="26.0" prefWidth="234.0" promptText="Fina" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+            <TextField fx:id="txtBorda" layoutX="34.0" layoutY="263.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
                <effect>
                   <InnerShadow>
                      <color>
@@ -108,7 +108,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtMolho" layoutX="34.0" layoutY="326.0" prefHeight="26.0" prefWidth="234.0" promptText="Molho de tomate" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+            <TextField fx:id="txtMolho" layoutX="34.0" layoutY="326.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
                <effect>
                   <InnerShadow>
                      <color>
@@ -120,7 +120,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtPreco" layoutX="34.0" layoutY="391.0" prefHeight="26.0" prefWidth="234.0" promptText="350.00" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+            <TextField fx:id="txtPreco" layoutX="34.0" layoutY="391.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
                <effect>
                   <InnerShadow>
                      <color>
@@ -157,7 +157,7 @@
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="txtRecheio" layoutX="34.0" layoutY="137.0" prefHeight="26.0" prefWidth="234.0" promptText="Frango" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+            <TextField fx:id="txtRecheio" layoutX="34.0" layoutY="137.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
                <effect>
                   <InnerShadow>
                      <color>

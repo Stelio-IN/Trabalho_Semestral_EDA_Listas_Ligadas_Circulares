@@ -6,6 +6,7 @@ package gerenciamento_pizzaria_fx;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -77,7 +78,7 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     private ComboBox<String> camboPizzaMolho;
 
     @FXML
-    private ComboBox<String> camboPizzaSabor;
+    private ComboBox<String> camboPizzaRecheio;
 
     @FXML
     private ComboBox<String> comboSalgadoMassa;
@@ -146,6 +147,9 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
 
     private Pizza pizza;
     private Salgadinho salgado;
+
+    @FXML
+    private TextField txtNomeSalgado;
 
     void btnListarSalgados() {
         ListaLigadaCircular listaligada = new ListaLigadaCircular();
@@ -228,7 +232,7 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         txtPrecoSalgado.setText(String.valueOf(sal.getPrecoUnitario()));
         txtRecheio.setText(sal.getRecheio());
         txtMassa.setText(sal.getMassa());
-
+        txtNomeSalgado.setText(sal.getNome());
         // Desmarque todos os toggles no ToggleGroup
         tipoSalgado.getToggles().forEach(toggle -> {
             if (toggle instanceof RadioButton radioButton) {
@@ -274,6 +278,47 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
 
     }
 
+    private final List<String> recheioPizza = new ArrayList<>();
+    private final List<String> recheioSalgado = new ArrayList<>();
+    private final List<String> MolhoPizza = new ArrayList<>();
+    private final List<String> MassaSalgado = new ArrayList<>();
+
+    void carregarRecheioPizza() {
+        recheioPizza.add("Calabresa");
+        recheioPizza.add("Mussarela");
+        recheioPizza.add("Portuguesa");
+        recheioPizza.add("Margherita");
+        ObservableList<String> obserRecheioPizza = FXCollections.observableArrayList(recheioPizza);
+        camboPizzaRecheio.setItems(obserRecheioPizza);
+    }
+
+    void carregarMolhoPizza() {
+        MolhoPizza.add("Tomate");
+        MolhoPizza.add("Bechamel");
+        MolhoPizza.add("Pesto");
+        MolhoPizza.add("Barbecue");
+        ObservableList<String> obserMolhoPizza = FXCollections.observableArrayList(MolhoPizza);
+        camboPizzaMolho.setItems(obserMolhoPizza);
+    }
+
+    void carregarMassaSalgado() {
+        MassaSalgado.add("Folhada");
+        MassaSalgado.add("Integral");
+        MassaSalgado.add("Tradicional");
+        MassaSalgado.add("Sem Glúten");
+        ObservableList<String> obserMassaSalgado = FXCollections.observableArrayList(MassaSalgado);
+        comboSalgadoMassa.setItems(obserMassaSalgado);
+    }
+
+    void carregarRecheioSalgado() {
+        recheioSalgado.add("Frango");
+        recheioSalgado.add("Carne");
+        recheioSalgado.add("Queijo");
+        recheioSalgado.add("Presunto");
+        ObservableList<String> obserRecheioSalgado = FXCollections.observableArrayList(recheioSalgado);
+        comboSalgadoRecheio.setItems(obserRecheioSalgado);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -295,9 +340,28 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         tabelaSalgado.getSelectionModel().selectedItemProperty().addListener((obs, antigo, novo) -> {
             if (novo != null) {
                 // Chame um método para selecionar automaticamente o Toggle com base no tipo do salgado
-             //   selecionarTogglePorTipo(novo.getTipo());
+                //   selecionarTogglePorTipo(novo.getTipo());
             }
         });
+        carregarRecheioSalgado();
+        carregarMassaSalgado();
+        carregarMolhoPizza();
+        carregarRecheioPizza();
+        camboPizzaMolho.setOnAction(this::preencherMolhoPizza);
+        camboPizzaRecheio.setOnAction(this::preencherRecheioPizza);
+    }
+
+    private void preencherRecheioPizza(ActionEvent event) {
+        String textoSelecionado = camboPizzaRecheio.getSelectionModel().getSelectedItem();
+        if (textoSelecionado != null) {
+            txtRecheioPizza.setText(textoSelecionado);
+        }
+    }
+    private void preencherMolhoPizza(ActionEvent event) {
+        String textoSelecionado = camboPizzaMolho.getSelectionModel().getSelectedItem();
+        if (textoSelecionado != null) {
+            txtMolho.setText(textoSelecionado);
+        }
     }
 
 //    private void selecionarTogglePorTipo(String tipo) {
@@ -308,7 +372,6 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
 //            }
 //        });
 //    }
-
     private void resetarFXML(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Tela_Fazer_Pedido.fxml"));
@@ -327,7 +390,13 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
     void Fazer_Pedido(ActionEvent event) {
         ListaLigadaCircular venda = new ListaLigadaCircular();
         Venda pedido = new Venda();
-
+        
+         RadioButton pegarBorda = (RadioButton) BordaPizza.getSelectedToggle();
+        String borda = pegarBorda.getText();
+         RadioButton pegarSalgado = (RadioButton) tipoSalgado.getSelectedToggle();
+        String tipo = pegarSalgado.getText();
+        salgado.setTipo(tipo);
+        pizza.setBorda(borda);
         int idVenda = venda.sizeVenda() + 1;
         pedido.setId(idVenda);
         pedido.setCelular(txtNomeCelular.getText());
@@ -335,10 +404,16 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         pedido.setPizza(pizza);
         pedido.setSalgadinho(salgado);
         pedido.setNome_Pizza(pizza.getSabor());
+        pedido.setNome_Salgadinho(salgado.getNome());
         pedido.setQuantidadePizza(Integer.parseInt(txtQuantidadePizza.getText()));
         pedido.setQuantidadeSalgado(Integer.parseInt(txtQuantidadeSalgado.getText()));
         pedido.setMorada(txtNomeMorada.getText());
-        pedido.setValorTotal(Double.parseDouble(txtPrecoTotal.getText()));
+
+        Double total = Double.parseDouble(txtPrecoPizza.getText()) * Double.parseDouble(txtQuantidadePizza.getText())
+                + Double.parseDouble(txtPrecoSalgado.getText()) * Double.parseDouble(txtQuantidadeSalgado.getText());
+
+        //  pedido.setValorTotal(Double.parseDouble(txtPrecoTotal.getText()));
+        pedido.setValorTotal(total);
         pedido.setSituacao("Pendente");
 
         venda.adicionar(pedido);
@@ -347,7 +422,7 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Pedido Efetuado");
         alert.setHeaderText(null);
-        alert.setContentText("Pedido efetuado com sucesso!");
+        alert.setContentText("Pedido Efectuado com sucesso! Total: " + total);
         alert.showAndWait();
 
         venda.exibirVenda();

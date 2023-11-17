@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gerenciamento_pizzaria_fx;
+package controller;
 
+import model.ListaLigadaCircular;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -22,7 +23,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.ListaLigadaCircular;
 import model.Venda;
 
 /**

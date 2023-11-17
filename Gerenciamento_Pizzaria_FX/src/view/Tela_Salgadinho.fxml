@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Salgadinho_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Tela_Salgadinho_Controller">
    <children>
       <AnchorPane layoutX="14.0" layoutY="52.0" prefHeight="418.0" prefWidth="310.0" style="-fx-background-color: #b65d00; -fx-background-radius: 20px;">
          <effect>
@@ -167,7 +167,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Button layoutX="102.0" layoutY="540.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar">
+      <Button layoutX="102.0" layoutY="540.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

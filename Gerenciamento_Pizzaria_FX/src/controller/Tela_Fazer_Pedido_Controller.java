@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gerenciamento_pizzaria_fx;
+package controller;
 
+import model.ListaLigadaCircular;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,7 +30,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.ListaLigadaCircular;
 import model.Pizza;
 import model.Salgadinho;
 import model.Venda;
@@ -349,6 +349,9 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         carregarRecheioPizza();
         camboPizzaMolho.setOnAction(this::preencherMolhoPizza);
         camboPizzaRecheio.setOnAction(this::preencherRecheioPizza);
+        comboSalgadoRecheio.setOnAction(this::preencherRecheioSalgado);
+        comboSalgadoMassa.setOnAction(this::preencherMassaSalgado);
+        
     }
 
     private void preencherRecheioPizza(ActionEvent event) {
@@ -357,17 +360,29 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
             txtRecheioPizza.setText(textoSelecionado);
         }
     }
-
     private void preencherMolhoPizza(ActionEvent event) {
         String textoSelecionado = camboPizzaMolho.getSelectionModel().getSelectedItem();
         if (textoSelecionado != null) {
             txtMolho.setText(textoSelecionado);
         }
     }
+      private void preencherMassaSalgado(ActionEvent event) {
+        String textoSelecionado =  comboSalgadoMassa.getSelectionModel().getSelectedItem();
+        if (textoSelecionado != null) {
+            txtMassa.setText(textoSelecionado);
+        }
+    }
+      private void preencherRecheioSalgado(ActionEvent event) {
+        String textoSelecionado =  comboSalgadoRecheio.getSelectionModel().getSelectedItem();
+        if (textoSelecionado != null) {
+            txtRecheio.setText(textoSelecionado);
+        }
+    }
+
 
     private void resetarFXML(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Tela_Fazer_Pedido.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tela_Fazer_Pedido.fxml"));
             Parent root = loader.load();
 
             // Seu código para configurar o controlador, se necessário
@@ -390,6 +405,11 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         String tipo = pegarSalgado.getText();
         salgado.setTipo(tipo);
         pizza.setBorda(borda);
+        pizza.setRecheio(txtRecheioPizza.getText());
+        pizza.setMolho(txtMolho.getText());
+        salgado.setMassa(txtMassa.getText());
+        salgado.setRecheio(txtRecheio.getText());
+        
         int idVenda = venda.sizeVenda() + 1;
         pedido.setId(idVenda);
         pedido.setCelular(txtNomeCelular.getText());
@@ -422,4 +442,18 @@ public class Tela_Fazer_Pedido_Controller implements Initializable {
         resetarFXML(event);
     }
 
+        @FXML
+    void voltar(ActionEvent event) {
+    try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tela_Login.fxml"));
+            Parent root = loader.load();
+
+            // Seu código para configurar o controlador, se necessário
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Lide com a exceção conforme necessário
+        }
+    }
 }

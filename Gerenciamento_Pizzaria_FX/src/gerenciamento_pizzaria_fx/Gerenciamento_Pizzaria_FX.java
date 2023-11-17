@@ -25,7 +25,7 @@ public class Gerenciamento_Pizzaria_FX extends Application {
     //    Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
   //      Parent root = FXMLLoader.load(getClass().getResource("Tela_Salgadinho.fxml"));
      // Parent root = FXMLLoader.load(getClass().getResource("Tela_Fazer_Pedido.fxml"));
-      Parent root = FXMLLoader.load(getClass().getResource("Tela_Login.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("/view/Tela_Login.fxml"));
 
         Scene scene = new Scene(root);
 

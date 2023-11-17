@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gerenciamento_pizzaria_fx;
+package controller;
 
+import model.ListaLigadaCircular;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -25,10 +26,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import model.ListaLigadaCircular;
 import model.Venda;
 
 /**
@@ -92,6 +93,17 @@ public class Tela_Menu_FuncController implements Initializable {
     @FXML
     private TextField txtSituacao;
 
+    @FXML
+    private TextField p1;
+
+    @FXML
+    private TextField p2;
+
+    @FXML
+    private TextField s1;
+
+    @FXML
+    private TextField s2;
     @FXML
     private TextField txtTotalPagar;
     private ListaLigadaCircular listaVenda = new ListaLigadaCircular();
@@ -163,7 +175,7 @@ public class Tela_Menu_FuncController implements Initializable {
     @FXML
     void atualizarPagina(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Tela_Menu_Func.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tela_Menu_Func.fxml"));
             Parent root = loader.load();
 
             // Seu código para configurar o controlador, se necessário
@@ -191,12 +203,12 @@ public class Tela_Menu_FuncController implements Initializable {
 
     @FXML
     void Tela_Gestao_Pizza(ActionEvent event) {
-        carregarTela("/gerenciamento_pizzaria_fx/FXMLDocument");
+        carregarTela("/view/FXMLDocument");
     }
 
     @FXML
     void Tela_Gestao_Salgadinho(ActionEvent event) {
-        carregarTela("/gerenciamento_pizzaria_fx/Tela_Salgadinho");
+        carregarTela("/view/Tela_Salgadinho");
     }
 
     @FXML
@@ -219,9 +231,17 @@ public class Tela_Menu_FuncController implements Initializable {
         alerta.setHeaderText("Quer realment Fechar");
         alerta.setContentText("Deseja salvar antes de Fechar");
         if (alerta.showAndWait().get() == ButtonType.OK) {
-            stage = (Stage) borderPane.getScene().getWindow();
-            System.out.println("Exit exito");
-            stage.close();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tela_Login.fxml"));
+                Parent root = loader.load();
+
+                // Seu código para configurar o controlador, se necessário
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace(); // Lide com a exceção conforme necessário
+            }
         }
     }
 
@@ -240,8 +260,6 @@ public class Tela_Menu_FuncController implements Initializable {
         borderPane.setCenter(root);
     }
 
-
- 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         listaVenda.exibirVenda();
@@ -249,9 +267,42 @@ public class Tela_Menu_FuncController implements Initializable {
                 (observable, oldValue, newValue) -> obterLinhaSelecionada(newValue)
         );
 
-        
         ListarVendas();
-        
+        p1.setVisible(false);
+        p2.setVisible(false);
+        s2.setVisible(false);
+        s1.setVisible(false);
+
+    }
+
+    @FXML
+    void ocultarPizzaDetalhes(MouseEvent event) {
+        p1.setVisible(false);
+        p2.setVisible(false);
+    }
+
+    @FXML
+    void ocultarSalgadoDetalhes(MouseEvent event) {
+        s2.setVisible(false);
+        s1.setVisible(false);
+    }
+
+    @FXML
+    void pizzaDetalhes(MouseEvent event) {
+        p1.setText(produto.getPizza().getRecheio());
+        p2.setText(produto.getPizza().getMolho());
+        p2.setVisible(true);
+        p1.setVisible(true);
+
+    }
+
+    @FXML
+    void salgadoDetalhes(MouseEvent event) {
+        s1.setText(produto.getSalgadinho().getRecheio());
+        s2.setText(produto.getSalgadinho().getMassa());
+        s2.setVisible(true);
+        s1.setVisible(true);
+
     }
 
 }

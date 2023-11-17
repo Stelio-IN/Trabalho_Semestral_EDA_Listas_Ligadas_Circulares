@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
    <children>
       <AnchorPane layoutX="353.0" layoutY="94.0" prefHeight="466.0" prefWidth="518.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
@@ -188,7 +188,7 @@
             </DropShadow>
          </effect>
       </AnchorPane>
-      <Button layoutX="91.0" layoutY="612.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar">
+      <Button layoutX="91.0" layoutY="612.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>

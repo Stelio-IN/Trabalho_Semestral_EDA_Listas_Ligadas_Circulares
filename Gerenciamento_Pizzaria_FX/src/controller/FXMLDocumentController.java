@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
  */
-package gerenciamento_pizzaria_fx;
+package controller;
 
+import model.ListaLigadaCircular;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -23,7 +24,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.ListaLigadaCircular;
 import model.Pizza;
 
 /**
@@ -167,7 +167,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void atualizarPagina(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
             Parent root = loader.load();
 
             // Seu código para configurar o controlador, se necessário
@@ -191,6 +191,21 @@ public class FXMLDocumentController implements Initializable {
         a = listaPizza.sizePizza();
         txtId.setText(String.valueOf(a));
 
+    }
+    
+        @FXML
+    void voltar(ActionEvent event) {
+     try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tela_Menu_Func.fxml"));
+            Parent root = loader.load();
+
+            // Seu código para configurar o controlador, se necessário
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Lide com a exceção conforme necessário
+        }
     }
 
 }

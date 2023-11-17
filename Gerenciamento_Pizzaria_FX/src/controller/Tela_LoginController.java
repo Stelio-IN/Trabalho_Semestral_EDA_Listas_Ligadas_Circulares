@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gerenciamento_pizzaria_fx;
+package controller;                              
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,10 +43,10 @@ public class Tela_LoginController implements Initializable {
     @FXML
     void Entrar(ActionEvent event) throws IOException {
         if (txtEmail.getText().equalsIgnoreCase("funcionario@gmail.com")) {
-            Tela_de_Entrada(event,"/gerenciamento_pizzaria_fx/Tela_Menu_Func.fxml");
+            Tela_de_Entrada(event,"/view/Tela_Menu_Func.fxml");
         }
         if (txtEmail.getText().equalsIgnoreCase("cliente@gmail.com")) {
-            Tela_de_Entrada(event,"/gerenciamento_pizzaria_fx/Tela_Fazer_Pedido.fxml");
+            Tela_de_Entrada(event,"/view/Tela_Fazer_Pedido.fxml");
         }
 
     }

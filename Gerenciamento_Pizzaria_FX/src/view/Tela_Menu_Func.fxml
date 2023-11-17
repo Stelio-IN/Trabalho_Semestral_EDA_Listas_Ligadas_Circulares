@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gerenciamento_pizzaria_fx.Tela_Menu_FuncController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Tela_Menu_FuncController">
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="237.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <effect>
@@ -123,12 +123,12 @@
                   </DropShadow>
                </effect>
                <children>
-                  <TextField fx:id="txtId" layoutX="268.0" layoutY="81.0" prefHeight="25.0" prefWidth="33.0" promptText="1" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+                  <TextField fx:id="txtId" layoutX="263.0" layoutY="53.0" prefHeight="25.0" prefWidth="33.0" promptText="1" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="243.0" layoutY="87.0" text="Id:" textFill="#793d02">
+                  <Label layoutX="238.0" layoutY="59.0" text="Id:" textFill="#793d02">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -168,7 +168,7 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="35.0" layoutY="99.0" text="Pizza" textFill="#864202">
+                  <Label layoutX="35.0" layoutY="99.0" onMouseEntered="#pizzaDetalhes" onMouseExited="#ocultarPizzaDetalhes" text="Pizza" textFill="#864202">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -183,7 +183,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="34.0" layoutY="157.0" text="Salgado" textFill="#793d02">
+                  <Label layoutX="34.0" layoutY="157.0" onMouseEntered="#salgadoDetalhes" onMouseExited="#ocultarSalgadoDetalhes" text="Salgado" textFill="#793d02">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -241,6 +241,26 @@
                         </Label>
                      </children>
                   </AnchorPane>
+                  <TextField fx:id="s1" layoutX="110.0" layoutY="152.0" prefHeight="31.0" prefWidth="85.0" promptText="Badjia" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="recheio">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="s2" layoutX="210.0" layoutY="152.0" prefHeight="31.0" prefWidth="92.0" promptText="Badjia" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="Massa">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="p1" layoutX="116.0" layoutY="84.0" prefHeight="31.0" prefWidth="85.0" promptText="Badjia" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="recheio">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="p2" layoutX="211.0" layoutY="84.0" prefHeight="31.0" prefWidth="92.0" promptText="Badjia" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css" text="molho">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="381.0" layoutY="494.0" prefHeight="170.0" prefWidth="466.0" style="-fx-background-radius: 30px; -fx-background-color: white;">

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+   <children>
+      <AnchorPane layoutX="353.0" layoutY="94.0" prefHeight="466.0" prefWidth="518.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <TableView fx:id="tabela" layoutX="16.0" layoutY="97.0" prefHeight="200.0" prefWidth="486.0" styleClass="tabela">
+              <columns>
+                <TableColumn fx:id="ColunaId" prefWidth="41.0" styleClass="tabelinha" text="id" />
+                <TableColumn fx:id="ColunaSabor" prefWidth="84.0" styleClass="tabelinha" text="Sabor" />
+                  <TableColumn fx:id="ColunaBorda" prefWidth="100.0" styleClass="tabelinha" text="Borda" />
+                  <TableColumn fx:id="ColunaMolho" prefWidth="101.0" styleClass="tabelinha" text="Molho" />
+                  <TableColumn fx:id="ColunaRecheio" prefWidth="79.0" styleClass="tabelinha" text="Recheio" />
+                  <TableColumn fx:id="ColunaPreco" prefWidth="79.0" styleClass="tabelinha" text="Preço Uni." />
+              </columns>
+            </TableView>
+            <Button layoutX="374.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnListar" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Listar">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="96.0" layoutY="322.0" mnemonicParsing="false" onAction="#listarOrdem" prefHeight="30.0" prefWidth="179.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Listar Ordem Crescente">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="284.0" layoutY="375.0" mnemonicParsing="false" onAction="#editar" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Editar">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="374.0" layoutY="375.0" mnemonicParsing="false" onAction="#gravar" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Gravar">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="285.0" layoutY="322.0" mnemonicParsing="false" onAction="#remover" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Remover">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="94.0" layoutY="375.0" mnemonicParsing="false" onAction="#atualizarPagina" prefHeight="30.0" prefWidth="179.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Atualizar Pagina">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutY="31.0" prefHeight="32.0" prefWidth="132.0" style="-fx-background-color: #b65d00; -fx-background-radius: 0px 10px 10px 0px;">
+               <children>
+                  <Label layoutX="33.0" layoutY="4.0" text="Operações" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.5052631497383118" green="0.47345030307769775" blue="0.47345030307769775" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="14.0" layoutY="89.0" prefHeight="474.0" prefWidth="310.0" style="-fx-background-color: #b65d00; -fx-background-radius: 20px;">
+         <children>
+            <TextField fx:id="txtId" layoutX="234.0" layoutY="97.0" prefHeight="25.0" prefWidth="33.0" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtSabor" layoutX="34.0" layoutY="198.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtBorda" layoutX="34.0" layoutY="263.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtMolho" layoutX="34.0" layoutY="326.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPreco" layoutX="34.0" layoutY="391.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="34.0" layoutY="177.0" text="Sabor" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="209.0" layoutY="99.0" text="Id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="240.0" text="Borda" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="303.0" text="Molho" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="367.0" text="Preço" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRecheio" layoutX="34.0" layoutY="137.0" prefHeight="26.0" prefWidth="234.0" promptText="xxxx" styleClass="textfields_esquerda" stylesheets="@../css/Tabela.css">
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="34.0" layoutY="112.0" text="Recheio" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="26.0" text="Gestão de Pizzas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.3684210479259491" green="0.3561403453350067" blue="0.3561403453350067" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+      <Button layoutX="91.0" layoutY="612.0" mnemonicParsing="false" onAction="#voltar" prefHeight="30.0" prefWidth="80.0" styleClass="botao2" stylesheets="@../css/Tabela.css" text="Voltar">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

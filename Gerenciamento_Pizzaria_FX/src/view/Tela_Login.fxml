@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="PainelTelaLogin" prefHeight="700.0" prefWidth="1000.0" styleClass="mainFxmlClass" stylesheets="@../css/Tabela.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Tela_LoginController">
+   <children>
+      <AnchorPane layoutX="99.0" layoutY="50.0" prefHeight="594.0" prefWidth="802.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="611.0" fitWidth="424.0" layoutX="378.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../EDA%20img/Livreto%20Alimentação%20Saudável%20Criativo%20Moderno%20Verde%20(6).png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="4.0" layoutY="4.0" prefHeight="591.0" prefWidth="374.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="txtEmail" layoutX="90.0" layoutY="303.0" prefHeight="26.0" prefWidth="213.0" promptText="Digite o seu e-mail" style="-fx-border-color: #DAA530;" styleClass="textfields_esquerda">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="56.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../EDA%20img/e-mail%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="53.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../EDA%20img/cadeado%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="102.0" fitWidth="103.0" layoutX="137.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../EDA%20img/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="114.0" layoutY="158.0" text="Delícias Tob Tob" textFill="#b65d00">
+                     <font>
+                        <Font name="Sitka Text Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="207.0" layoutY="431.0" mnemonicParsing="false" onAction="#Entrar" prefHeight="26.0" prefWidth="95.0" styleClass="botao" text="Entrar">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="140.0" layoutY="207.0" text="Login" textFill="#b65d00">
+                     <font>
+                        <Font name="Sitka Text Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtPassword" layoutX="89.0" layoutY="369.0" prefHeight="26.0" prefWidth="214.0" promptText="**********" style="-fx-border-color: #DAA530;" styleClass="textfields_esquerda" />
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.5684210658073425" green="0.5473684072494507" blue="0.5473684072494507" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

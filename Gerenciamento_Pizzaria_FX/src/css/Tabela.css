@@ -1,0 +1,68 @@
+/* style.css */
+
+/* Estilizar o cabeçalho da tabela */
+/**.table-view .column-header {
+ /   -fx-background-color: #336699;
+    -fx-text-fill: #ffffff;
+}
+
+/* Estilizar as células da tabela */
+/*.table-row-cell {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #333333;
+}
+
+/* Estilizar as células quando o mouse passa por cima */
+/*.table-row-cell:hover {
+    -fx-background-color: #c0c0c0;
+}
+
+/* Estilizar a borda da tabela */
+/*.table-view {
+    -fx-border-color: #336699;
+    -fx-border-width: 2;
+}
+
+/*
+ * Empty Stylesheet file.
+ */
+
+ .mainFxmlClass {
+    -fx-background-color: #ede8e8cc;
+}
+
+.textfields_esquerda{
+    -fx-border-width: 0px 0px 1px 0px;
+    -fx-border-color: #ccc;
+    -fx-background-color: transparent;
+}
+
+
+.botao{
+    -fx-background-color: linear-gradient(to right,  #c37a05be, rgba(88, 54, 2, 0.92));
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-background-radius: 10px
+}
+
+.botao2{
+    -fx-background-color: linear-gradient(to right,   #b65d00,   #b65d00);
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-background-radius: 10px
+}
+
+
+.tabela{
+    -fx-background-color: linear-gradient(to left,  #580bff03, #059bff05);
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-background-radius: 10px
+}
+
+.tabelinha{
+    -fx-background-color: linear-gradient(to right,  #b65e0011, #b65e0010);
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-background-radius: 0px;}/*
+ * Empty Stylesheet file.
+ */
+
+
+

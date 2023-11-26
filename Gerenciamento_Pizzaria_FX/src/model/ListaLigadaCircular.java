@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import javax.swing.JOptionPane;
 import model.Pizza;
 import model.Salgadinho;
 import model.Venda;
@@ -34,6 +35,12 @@ public class ListaLigadaCircular {
 
     public void adicionar(Object objeto) {
         No novoNo = new No(objeto);
+        if (contem(objeto)) {
+            JOptionPane.showMessageDialog(null,"Nomes Semelhantes");
+            System.out.println("O objeto já existe na lista. Não será adicionado novamente.");
+            return; // ou lança uma exceção, dependendo dos requisitos
+        }
+
         if (cabeca == null) {
             cabeca = novoNo;
             cabeca.proximo = cabeca; // Fazendo o último nó apontar de volta para o primeiro
@@ -46,6 +53,23 @@ public class ListaLigadaCircular {
             novoNo.proximo = cabeca;
         }
     }
+
+    private boolean contem(Object objeto) {
+        if (cabeca == null) {
+            return false;
+        }
+
+        No temp = cabeca;
+        do {
+            if (temp.equals(objeto)) {
+                return true;
+            }
+            temp = temp.proximo;
+        } while (temp != cabeca);
+
+        return false;
+    }
+
 
     /*
         Pizza

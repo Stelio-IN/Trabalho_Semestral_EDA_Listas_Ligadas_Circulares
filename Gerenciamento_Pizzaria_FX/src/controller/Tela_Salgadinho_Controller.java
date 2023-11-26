@@ -169,7 +169,7 @@ public class Tela_Salgadinho_Controller implements Initializable {
     @FXML
     void atualizarPagina(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Tela_Salgadinho.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tela_Salgadinho.fxml"));
             Parent root = loader.load();
 
             // Seu código para configurar o controlador, se necessário

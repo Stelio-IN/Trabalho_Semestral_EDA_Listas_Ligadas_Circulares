@@ -146,6 +146,10 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void gravar(ActionEvent event) {
         Pizza pizzaAtualizada = new Pizza();
+        
+      //  listaPizza.
+    //    txtSabor.getText();
+        
         pizzaAtualizada.setId(Integer.parseInt(txtId.getText()));
         pizzaAtualizada.setSabor(txtSabor.getText());
         pizzaAtualizada.setPrecoUnitario(Double.parseDouble(txtPreco.getText()));
